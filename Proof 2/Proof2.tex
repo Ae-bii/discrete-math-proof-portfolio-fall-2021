@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath}  % a standard package for math writing
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{listings}   % include the contents of code files (avoids version issues!)
+\usepackage{mathpazo} % a better font than the default, according to some
+\usepackage{booktabs}  % for pretty tables
+\usepackage[hidelinks]{hyperref}   % makes section links, bibliography links clickable
+\usepackage{graphicx}   % include images
+\usepackage{wrapfig}    % wrap text at the side of a smaller figure (don't bother doing this for your own figures)
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}        % write text in pretty colors
+\usepackage{multicol}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+
+\date{October 21, 2021}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\title{Proof Portfolio}
+\author{Anupam Bhakta}
+
+
+\begin{document}
+	
+\maketitle
+
+\begin{theorem}
+	Let $a$ be a fixed real number. Then 
+	\[\sum_{i=0}^n(a+i)=\frac{1}{2}(n+1)(2a+n)\]
+	for every nonnegative integer $n$.
+\end{theorem}
+
+\begin{proof}
+	We proceed by induction. \\
+	Let $n = 0$ be the smallest nonnegative integer. Then,
+	$$\sum_{i=0}^{0}(a+i) = a = \frac{1}{2}(0+1)(2a+0).$$
+	Thus, the result holds when $n = 0$. \\
+	Assume that
+	$$\sum_{i=0}^k(a+i)=\frac{1}{2}(k+1)(2a+k)$$
+	for a nonnegative integer $k$. We show that $\sum_{i=0}^{k+1}(a+i)=\frac{1}{2}(k+2)(2a+k+1)$. Observe that
+	\begin{align}
+		\sum_{i=0}^{k+1}(a+i)&= (a+k+1) + \sum_{i=0}^{k}(a+i) \\
+		&=(a+k+1) + \frac{1}{2}(k+1)(2a+k) \\
+		&= \frac{1}{2}(2ak + 4a + k^2 +3k +2) \\
+		&=\frac{1}{2}(k+2)(2a+k+1),
+	\end{align}
+	where in (2), we use the Inductive Hypothesis.\\\\
+	Thus, by the Principle of Mathematical Induction, we conclude that $\sum_{i=0}^n(a+i)=\frac{1}{2}(n+1)(2a+n)$ for all nonnegative integers $n$.
+\end{proof}
+
+\end{document}

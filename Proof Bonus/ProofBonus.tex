@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath}  % a standard package for math writing
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{listings}   % include the contents of code files (avoids version issues!)
+%\usepackage{mathpazo} % a better font than the default, according to some
+\usepackage{booktabs}  % for pretty tables
+\usepackage[hidelinks]{hyperref}   % makes section links, bibliography links clickable
+\usepackage{graphicx}   % include images
+\usepackage{wrapfig}    % wrap text at the side of a smaller figure (don't bother doing this for your own figures)
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}        % write text in pretty colors
+\usepackage{multicol}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\title{Proof Portfolio Bonus}
+\author{Anupam Bhakta}
+
+
+\begin{document}
+	
+\maketitle
+
+\begin{definition}[Divisible]
+	An integer $n$ is {\bf divisible} be an integer $d$ is there exists an integer $k$ such that $n=d\times k$.
+\end{definition}
+
+\begin{theorem}
+For all nonnegative integers $n$, 
+\[2^{2n}-1\text{ is divisible by }3.\]
+\end{theorem}
+
+\begin{proof}
+	We proceed by induction. Since $2^{2\cdot0}-1=0=3\cdot0$, the result holds for $n=0$. Assume that $2^{2k}-1$ is divisible by 3 for all nonnegative integers $k$. By the definition of divisibility, this means that $2^{2k}-1=3x \implies 2^{2k}=3x+1$ for some integer $x$. We show that $2^{2(k+1)}-1$ is divisible by 3 for all nonnegative integers. Observe that 
+	\begin{align}
+		2^{2(k+1)}-1 &= 2^{2}\cdot2^{2k}-1 \\
+		&= 4(3x+1)-1 \\
+		&= 12x+4-1 \\
+		&= 3(4x-1),
+	\end{align}
+	where in (2), we use the Inductive Hypothesis. Since $x$ is an integer, $3(4x-1)$ is divisible by $3$. Thus, $2^{2n}-1$ is divisible by 3 for all nonnegative integers $n$.
+\end{proof}
+
+\end{document}

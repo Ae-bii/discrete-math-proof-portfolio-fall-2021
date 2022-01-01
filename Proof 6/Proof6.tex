@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath}  % a standard package for math writing
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{listings}   % include the contents of code files (avoids version issues!)
+\usepackage{mathpazo} % a better font than the default, according to some
+\usepackage{booktabs}  % for pretty tables
+\usepackage[hidelinks]{hyperref}   % makes section links, bibliography links clickable
+\usepackage{graphicx}   % include images
+\usepackage{wrapfig}    % wrap text at the side of a smaller figure (don't bother doing this for your own figures)
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}        % write text in pretty colors
+\usepackage{multicol}
+\usepackage{amsthm}
+
+\date{November 8, 2021}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newtheorem{theorem}{Theorem}
+
+\title{Proof Portfolio}
+\author{Anupam Bhakta}
+
+
+\begin{document}
+	
+\maketitle
+
+\begin{theorem}
+A 3-regular graph G has a cut-vertex if and only if G has a bridge.
+\end{theorem}
+
+\begin{proof}
+Assume $G$ is a 3-regular graph with a cut-vertex $v$. Then $G-v$ can be seperated into two components $G_1$ and $G_2$ or three components $G_1$, $G_2$, and $G_3$. Consider the case where there are two components. Since $G$ was originally a 3-regular graph, without loss of generality $v$ has a vertex $u$ that is adjacent in $G_1$ and two vertices that are adjacent in $G_2$. As such, there is a bridge $uv$ between the two components. Next, consider the case in which there are  3 components. Then, $v$ has vertex $u$, $x$, and $y$ that is adjacent in $G_1$, $G_2$, and $G_3$ respectively. As such, there are bridges $uv$, $xv$, and $yv$.
+
+Assume $G$ is a 3-regular graph with a bridge $uv$. Then the vertices of the bridge, $u$ and $v$, are also cut-vertices since removing them would remove their edges too. The bridge is a part of the edges that will be removed. Next, assume $G$ has bridges $uv$, $xv$, and $yv$. By the same logic used previously, the vertices of the bridges are also cut-vertices.
+
+Thus we can conclude that a 3-regular graph $G$ has a cut-vertex if and only if $G$ has a bridge.
+\end{proof}
+
+\end{document}

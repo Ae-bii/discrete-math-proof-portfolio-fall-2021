@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath}  % a standard package for math writing
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{listings}   % include the contents of code files (avoids version issues!)
+\usepackage{mathpazo} % a better font than the default, according to some
+\usepackage{booktabs}  % for pretty tables
+\usepackage[hidelinks]{hyperref}   % makes section links, bibliography links clickable
+\usepackage{graphicx}   % include images
+\usepackage{wrapfig}    % wrap text at the side of a smaller figure (don't bother doing this for your own figures)
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}        % write text in pretty colors
+\usepackage{multicol}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+
+\date{October 31, 2021}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\title{Proof Portfolio}
+\author{Anupam Bhakta}
+
+
+\begin{document}
+	
+\maketitle
+
+\begin{theorem}
+	Let $A$ and $B$ be two sets and let $f:A\to B$ be a function.  
+	If $|A| > |B|$ then $f$ is not injective (one-to-one).	
+\end{theorem}
+
+\begin{proof}
+	We prove the contrapositive. For two nonempty finite set A and B, suppose that $f:A\to B$ is injective. Then different elements of $A$ must have different images in $B$. Therefore, if $A$ has $n$ elements, then the elements of $A$ have $n$ images in $B$. Consequently, the set $B$ must contain at least $n$ elements. Therefore, if $f: A\to B$ is injective, then $|A|\le|B|$.
+\end{proof}
+
+\end{document}

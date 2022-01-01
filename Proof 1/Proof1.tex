@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath}  % a standard package for math writing
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{listings}   % include the contents of code files (avoids version issues!)
+\usepackage{mathpazo} % a better font than the default, according to some
+\usepackage{booktabs}  % for pretty tables
+\usepackage[hidelinks]{hyperref}   % makes section links, bibliography links clickable
+\usepackage{graphicx}   % include images
+\usepackage{wrapfig}    % wrap text at the side of a smaller figure (don't bother doing this for your own figures)
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}        % write text in pretty colors
+\usepackage{multicol}
+\usepackage{amsthm}
+
+\date{October 9, 2021}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newtheorem{theorem}{Theorem}
+
+\title{Proof Portfolio}
+\author{Anupam Bhakta}
+
+
+\begin{document}
+	
+\maketitle
+
+\begin{theorem}
+	Let $f:A\to B$ be a function and let $A_1$ and $A_2$ be subsets of $A$.  Prove that if $f$ is one-to-one then 
+	\[f(A_1\cap A_2)=f(A_1)\cap f(A_2).\]
+\end{theorem}
+
+\begin{proof}
+	Suppose $f:A\to B$ is an injective function. \\
+
+	If $x \in f(A_1 \cap A_2)$, then there exists some $a \in A_1 \cap A_2$ such that $f(a) = x$. Since $a\in A_1\cap A_2$, then $a$ is also an element of $A_1$, which means $f(a)$ is an element of $f(A_1)$. In the same way, $f(a)$ is also an element of $f(A_2)$. As a result, $f(a)$ is an element of $f(A_1)\cap f(A_2)$ which implies $f(A_1\cap A_2)\subseteq f(A_1)\cap f(A_2)$. \\
+
+	Next, let $y$ be an element of $f(A_1)\cap f(A_2)$. Then, there is an $a_1\in A_1$ and $a_2\in A_2$ such that $f(a_1)=y$ and $f(a_2)=y$. From this we can conclude that $a_1=a_2$ since $f(a_1)=f(a_2)$ and by the function being injective. This implies $f(A_1)\cap f(A_2)\subseteq f(A_1\cap A_2)$. \\
+
+	The only way $f(A_1)\cap f(A_2)\subseteq f(A_1\cap A_2)$ and $f(A_1\cap A_2)\subseteq f(A_1)\cap f(A_2)$ is if $f(A_1\cap A_2)=f(A_1)\cap f(A_2)$.
+\end{proof}
+
+\end{document}

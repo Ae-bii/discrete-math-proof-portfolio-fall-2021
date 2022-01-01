@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath}  % a standard package for math writing
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{listings}   % include the contents of code files (avoids version issues!)
+\usepackage{mathpazo} % a better font than the default, according to some
+\usepackage{booktabs}  % for pretty tables
+\usepackage[hidelinks]{hyperref}   % makes section links, bibliography links clickable
+\usepackage{graphicx}   % include images
+\usepackage{wrapfig}    % wrap text at the side of a smaller figure (don't bother doing this for your own figures)
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}        % write text in pretty colors
+\usepackage{multicol}
+\usepackage{amsthm}
+
+\date{November 8, 2021}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newtheorem{theorem}{Theorem}
+
+\title{Proof Portfolio}
+\author{Anupam Bhakta}
+
+
+\begin{document}
+	
+\maketitle
+
+\begin{theorem}
+A graph G is regular if and only if $\overline{G}$ is regular.
+\end{theorem}
+
+\begin{proof}
+Asumme a graph $G$ is $r$-regular with $n$ vertices. This means that every vertex $v\in V(\overline{G})$ is adjacent to $(n-1)-r$ vertices. As such, $\overline{G}$ is a $[(n-1)-r]$-regular graph. Thus, if $G$ is regular then $\overline{G}$ is also regular. \\
+
+Assume a graph $\overline{G}$ is $r$-regular. We know that the complement of $\overline{G}$ is also regular due to the previous reasoning. By definition, the complement of a complement is the original object so $G$ is also regular. Thus, we can conclude a graph $G$ is regular if and only if $\overline{G}$ is regular.
+\end{proof}
+
+\end{document}
